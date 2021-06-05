@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "teste",
   "main": "server.js",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error : no test especified\" && exit 1",
     "start": "node server.js"
