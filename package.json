@@ -1,10 +1,10 @@
 {
-  "name" : "projetoreactnative",
-  "version" : "1.0.0",
-  "description" : "teste",
-  "main" : "server.js",
-  "scripts" : {
-    "test" : "echo \"Error : no test especified\" && exit 1"
+  "name": "projetoreactnative",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error : no test especified\" && exit 1"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
