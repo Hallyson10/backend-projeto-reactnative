@@ -12,21 +12,22 @@ const routes = new Router();
 
 routes
 
-        .post("/registerUser", UserController.register)
-        .post("/auth", UserController.autenticate)
+                .post("/registerUser", UserController.register)
+                .post("/auth", UserController.autenticate)
 
-        .get("/",authMiddlware,ProjectController.getProjects)
-        .get("/:projectId",authMiddlware ,ProjectController.getProject)
-        .post("/createProject",authMiddlware,ProjectController.createProduct)
-        .put("/:productId",authMiddlware,ProjectController.updateProject)
+                //.get("/",authMiddlware,ProjectController.getProjects)
+                //.post("/createProject",authMiddlware,ProjectController.createProduct)
+                //.put("/:productId",authMiddlware,ProjectController.updateProject)
 
-        .post("/createTema",authMiddlware,TemaController.createTema)
-        .get("/tema/:temaId",authMiddlware,TemaController.getTema)
+                .post("/createTema",authMiddlware,TemaController.createTema)
+                .get("/tema/:temaId",authMiddlware,TemaController.getTema)
+                .get("/tm",authMiddlware,TemaController.getTemas)
+                //.get("/:projectId",authMiddlware,ProjectController.getProject)
 
-        .post("/verificaUserPertence",authMiddlware,TemaController.verifyPertence)
-        .post("/addUserTema",authMiddlware,TemaController.addUserTema)
+                .post("/verificaUserPertence",authMiddlware,TemaController.verifyPertence)
+                .post("/addUserTema",authMiddlware,TemaController.addUserTema)
 
-        .post("/createPost",authMiddlware,PostController.createPost)
+                .post("/createPost",authMiddlware,PostController.createPost)
 
 
 
