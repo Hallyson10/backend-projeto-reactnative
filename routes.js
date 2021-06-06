@@ -21,7 +21,7 @@ routes
 
                 .post("/createTema",authMiddlware,TemaController.createTema)
                 .get("/tema/:temaId",authMiddlware,TemaController.getTema)
-                .get("/tm",authMiddlware,TemaController.getTemas)
+                .get("/temas",authMiddlware,TemaController.getTemas)
                 //.get("/:projectId",authMiddlware,ProjectController.getProject)
 
                 .post("/verificaUserPertence",authMiddlware,TemaController.verifyPertence)
