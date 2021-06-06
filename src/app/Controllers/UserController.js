@@ -46,8 +46,8 @@ async register(req, res) {
       message: "Este usuário já existe!"
     })
   }
-  const { name, email , password } = req.body;
-  const data = { name, email, password };
+  const { name, email , password,assunto } = req.body;
+  const data = { name, email, password, assunto };
 
   const user = await User.create(data);
   const token = jwt.sign({id:user.id},authConfig.secret,{

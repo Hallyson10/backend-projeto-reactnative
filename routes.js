@@ -12,9 +12,9 @@ routes
         .post("/registerUser", UserController.register)
         .post("/auth", UserController.autenticate)
 
-        .get("/getProject",authMiddlware ,ProjectController.getProject)
-        .get("/",(req, res )=>{
-            return res.status(200).send({ message : "ok"})
-        })
+        .get("/",authMiddlware,ProjectController.getProjects)
+        .get("/:projectId",authMiddlware ,ProjectController.getProject)
+        .post("/createProject",authMiddlware,ProjectController.createProduct)
+        .put("/:productId",authMiddlware,ProjectController.updateProject);
 
 module.exports = routes;
