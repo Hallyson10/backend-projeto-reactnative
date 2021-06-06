@@ -49,10 +49,15 @@ module.exports = {
     async addUserTema(req,res){
         try {
             const { temaId } = req.body;
-            const tema = await Tema.findById({_id:temaId}).populate("userContains")
-            tema.userContains[tema.userContains.findIndex(el => el.id === req.userId)] = req.userId;
-            tema.save();
-            return res.status(200).send({ tema})
+            const tema = await Tema.findById(temaId).populate("userContains");
+            if(tema.userContains.indexOf(req.userId) <= -1 ){
+                tema.userContains.push(req.userId);
+                tema.save();
+                return res.status(200).send({ status : "usuário adicionado ao grupo!" });
+             }else{
+                return res.status(301).send({ message : "usuário ja existente" })
+             }
+        
         } catch (error) {
             return res.status(400).send({ message : error });
         }
