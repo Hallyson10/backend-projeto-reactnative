@@ -16,7 +16,7 @@ module.exports = {
     },
     async getTemas(req, res){
         try {
-            const temas = await Tema.find()
+            const temas = await Tema.find().populate("posts")
             return res.status(200).send({ temas });
         } catch (error) {
             console.log(error)
