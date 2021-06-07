@@ -4,6 +4,8 @@ const UserController = require('./src/app/Controllers/UserController');
 const ProjectController = require('./src/app/Controllers/ProjectController');
 const TemaController = require("./src/app/Controllers/TemaController");
 const PostController = require("./src/app/Controllers/PostController");
+const EnderecoController = require("./src/app/Controllers/EnderecoController");
+const AutomovelController = require("./src/app/Controllers/AutomovelController");
 
 const authMiddlware = require("./src/middleware/auth");
 
@@ -28,6 +30,12 @@ routes
                 .post("/addUserTema",authMiddlware,TemaController.addUserTema)
 
                 .post("/createPost",authMiddlware,PostController.createPost)
+                .post("/createEndereco",authMiddlware,EnderecoController.createEndereco)
+
+                .post("/createAutomovel",authMiddlware,AutomovelController.createAutomovel)
+
+                .get("/getEndereco",authMiddlware,EnderecoController.getEnderecos)
+                .get("/getAutomoveis",authMiddlware,AutomovelController.getAutomoveis)
 
 
 
